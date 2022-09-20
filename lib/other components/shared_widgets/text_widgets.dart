@@ -25,9 +25,9 @@ class TextStyles {
   static caption({Color? color}) =>
       TextStyle(fontSize: kfsCaption, color: color ?? Colors.black);
 
-  static headLine({Color? color}) => TextStyle(
-      fontSize: kfsHeadline,
-      fontWeight: FontWeight.w700,
+  static headLine({Color? color, double? fontSize, FontWeight? fontWeight}) => TextStyle(
+      fontSize: fontSize ?? kfsHeadline,
+      fontWeight: fontWeight ?? FontWeight.w700,
       letterSpacing: 0.5,
       color: color ?? Colors.black);
 

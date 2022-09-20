@@ -4,14 +4,14 @@ import 'package:dardy/other%20components/shared_widgets/text_widgets.dart';
 import 'package:dardy/other%20components/style/colors.dart';
 import 'package:flutter/material.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+class ResetPasswordScreen extends StatefulWidget {
+  const ResetPasswordScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,41 +28,15 @@ class _SignupScreenState extends State<SignupScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Get Started',
-                style: TextStyles.subTitle(
-                  color: DardyColors.black,
-                )),
+
             Text(
-              'Sign Up',
+              'Reset Password',
               style: TextStyles.title(color: DardyColors.black, fontsize: 35),
             ),
-
-            //Full name
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Full Name',
-              style: TextStyles.subTitle(
-                color: DardyColors.grey,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    // width: 0.0 produces a thin "hairline" border
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: DardyColors.grey, width: 0.0),
-                  ),
-                  filled: true,
-                  hintStyle: TextStyle(color: DardyColors.grey),
-                  hintText: "Luke Combs",
-                  fillColor: Colors.white70),
-            ),
-
+            Text('We will send a verification code to your registered email ID.',
+                style: TextStyles.subTitle(
+                  color: DardyColors.grey,
+                )),
             SizedBox(
               height: 20,
             ),
@@ -88,44 +62,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   fillColor: Colors.white70),
             ),
 
-            //  password
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Password',
-              style: TextStyles.subTitle(
-                color: DardyColors.grey,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                  suffixIcon: Icon(Icons.remove_red_eye),
-                  enabledBorder: OutlineInputBorder(
-                    // width: 0.0 produces a thin "hairline" border
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: DardyColors.grey, width: 0.0),
-                  ),
-                  filled: true,
-                  hintStyle: TextStyle(color: DardyColors.grey),
-                  hintText: "*********",
-                  fillColor: Colors.white70),
-            ),
 
-            //  forgot password
-            SizedBox(
-              height: 10,
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text('Password must be at least 8 characters long.',
-                  style: TextStyles.subTitle(
-                      color: DardyColors.black.withOpacity(0.8))),
-            ),
 
             SizedBox(
               height: 30,
@@ -142,9 +79,11 @@ class _SignupScreenState extends State<SignupScreen> {
                     backgroundColor: MaterialStateProperty.all(Colors.transparent),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)))),
-                onPressed: () {},
+                onPressed: () {
+                  context.beamToNamed('/email%20sent');
+                },
                 child: Text(
-                  'SIGN UP',
+                  'SUBMIT',
                   style: TextStyles.buttonTitle(color: DardyColors.white),
                 ),
               ),

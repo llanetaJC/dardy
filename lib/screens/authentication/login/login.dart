@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:dardy/other%20components/project_images.dart';
 import 'package:dardy/other%20components/shared_widgets/text_widgets.dart';
 import 'package:dardy/other%20components/style/colors.dart';
@@ -96,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Align(
               alignment: Alignment.topRight,
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: ()=> context.beamToNamed('/reset%20password'),
                   child: Text('Forgot Password?',
                       style: TextStyles.subTitle(
                           color: DardyColors.grey.withOpacity(0.8)))),
@@ -117,7 +118,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     backgroundColor: MaterialStateProperty.all(Colors.transparent),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)))),
-                onPressed: () {},
+                onPressed: () {
+                  context.beamToNamed('/bottomNav');
+                },
                 child: Text(
                   'LOGIN',
                   style: TextStyles.buttonTitle(color: DardyColors.white),
@@ -129,7 +132,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Align(
               alignment: Alignment.center,
-              child: Text('Create an account',style: TextStyles.subTitle(color: DardyColors.grey)),
+              child: TextButton(
+                  onPressed: () => context.beamToNamed('/signup'),
+                  child: Text('Create an account',style: TextStyles.subTitle(color: DardyColors.grey)
+                  )
+              ),
             )
           ],
         ),

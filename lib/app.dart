@@ -1,6 +1,10 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:dardy/screens/authentication/forgot_password/email_sent_screen.dart';
+import 'package:dardy/screens/authentication/forgot_password/reset_password.dart';
+import 'package:dardy/screens/authentication/forgot_password/verify_code.dart';
 import 'package:dardy/screens/authentication/login/login.dart';
 import 'package:dardy/screens/authentication/signup/signup.dart';
+import 'package:dardy/screens/features/bottom_nav.dart';
 import 'package:dardy/screens/splash_screen/splash_screen.dart';
 import 'package:dardy/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +23,17 @@ class _AppState extends State<App> {
 
   final routerDelegate = BeamerDelegate(
 
-    initialPath: '/',
+    initialPath: '/bottomNav',
     locationBuilder: RoutesLocationBuilder(
       routes: {
         '/': (context, state, data) => const SplashScreen(),
         '/welcome': (context, state, data) => ZoomIn(child: WelcomeScreen()),
         '/signin': (context, state, data) => FadeIn(child: LoginScreen()),
         '/signup': (context, state, data) => FadeIn(child: SignupScreen()),
+        '/reset%20password': (context, state, data) => FadeIn(child: ResetPasswordScreen()),
+        '/email%20sent': (context, state, data) => FadeIn(child:EmailSentScreen()),
+        '/verify%20code': (context, state, data) => FadeIn(child:VerifyCodeScreen()),
+        '/bottomNav': (context, state, data) => FadeIn(child:BottomNavigation()),
 
       },
     ),

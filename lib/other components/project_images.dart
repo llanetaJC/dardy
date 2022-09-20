@@ -4,3 +4,5 @@ const dardyIcon = "assets/icons/dardy_icon.png";
 const welcomeScreenBG = "assets/images/welcome_screen.png";
 const welcomeScreenOne = "assets/icons/welcome_screen1.png";
 const welcomeScreenTwo = "assets/icons/welcome_screen2.png";
+const emailsentIcon = "assets/icons/email_sent.png";
+const tunaPie = "assets/images/tuna_pie.png";
