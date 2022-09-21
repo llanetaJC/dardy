@@ -1,5 +1,6 @@
 import 'package:dardy/other%20components/style/colors.dart';
 import 'package:dardy/screens/features/home_screen/home_screen.dart';
+import 'package:dardy/screens/features/notification/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
@@ -17,12 +18,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    NotificationScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return PersistentTabView.custom(
       context,
       controller: _controller,
@@ -104,12 +104,13 @@ class CustomNavBarWidget extends StatelessWidget {
             child: IconTheme(
               data: IconThemeData(
                 size: 23,
-                color: isSelected ? item.activeColorSecondary : item.inactiveColorSecondary,
+                color: isSelected
+                    ? item.activeColorSecondary
+                    : item.inactiveColorSecondary,
               ),
               child: item.icon,
             ),
           ),
-
         ],
       ),
     );

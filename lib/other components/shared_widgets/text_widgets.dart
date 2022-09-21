@@ -25,8 +25,11 @@ class TextStyles {
         color: color ?? Colors.black,
       );
 
-  static caption({Color? color}) => GoogleFonts.montserrat(
-      fontSize: kfsCaption, color: color ?? Colors.black);
+  static caption({Color? color, double? fontSize, FontWeight? fontWeight}) =>
+      GoogleFonts.montserrat(
+          fontSize: fontSize ?? kfsCaption,
+          color: color ?? Colors.black,
+          fontWeight: fontWeight ?? FontWeight.normal);
 
   static headLine({Color? color, double? fontSize, FontWeight? fontWeight}) =>
       GoogleFonts.montserrat(
