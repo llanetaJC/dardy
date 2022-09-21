@@ -1,5 +1,6 @@
 import 'package:dardy/other%20components/style/colors.dart';
 import 'package:dardy/screens/features/home_screen/home_screen.dart';
+import 'package:dardy/screens/features/messages_screen/messages_screen.dart';
 import 'package:dardy/screens/features/notification/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
@@ -17,7 +18,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _navScreens = [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    MessagesScreen(),
     NotificationScreen(),
   ];
 

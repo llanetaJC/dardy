@@ -33,7 +33,7 @@ class NotificationContainer extends StatelessWidget {
                     fontSize: 14, fontWeight: FontWeight.w400)),
             TextButton(
                 style: ButtonStyle(
-                    padding: MaterialStatePropertyAll(EdgeInsets.zero)),
+                    padding: MaterialStateProperty.all(EdgeInsets.zero)),
                 onPressed: () => print(''),
                 child: Text(
                   'See the results',

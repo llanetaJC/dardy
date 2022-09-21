@@ -9,3 +9,5 @@ const tunaPie = "assets/images/tuna_pie.png";
 const subway = "assets/images/subway.png";
 const coin = "assets/icons/coins.png";
 const logo = "assets/icons/logo.png";
+const jollibeeLogo = "assets/icons/jollibee_logo.png";
+const jollibeeImage = "assets/images/jollibee_image.png";
