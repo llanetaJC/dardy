@@ -6,3 +6,6 @@ const welcomeScreenOne = "assets/icons/welcome_screen1.png";
 const welcomeScreenTwo = "assets/icons/welcome_screen2.png";
 const emailsentIcon = "assets/icons/email_sent.png";
 const tunaPie = "assets/images/tuna_pie.png";
+const subway = "assets/images/subway.png";
+const coin = "assets/icons/coins.png";
+const logo = "assets/icons/logo.png";

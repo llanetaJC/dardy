@@ -4,59 +4,71 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PortionHeader extends StatelessWidget {
-  const PortionHeader({Key? key, required this.title, required this.onPressed, required this.badge}) : super(key: key);
+  const PortionHeader(
+      {Key? key,
+      required this.title,
+      required this.onPressed,
+      required this.badge,
+      required this.color,
+      required this.hasBadge})
+      : super(key: key);
   final String title;
   final Function onPressed;
   final int badge;
+  final Color color;
+  final bool hasBadge;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Text(
-              title,
-              style: TextStyles.headLine(
-                  color: DardyColors.darkBlue,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
-
-            Container(
-                padding: EdgeInsets.all(5),
-                margin: EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                    color: DardyColors.midbrown,
-                    shape: BoxShape.circle
-                ),
-                child: Center(
-                  child: Text(
-                    badge.toString(),
-                    style: TextStyles.title(
-                      color: DardyColors.white,
-                    ),
-                  ),
-                )
-            )
-          ],
-        ),
-
-      Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'See more',
-            style: TextStyles.title(
-              color: DardyColors.grey,
-            ),
+          Row(
+            children: [
+              Text(
+                title,
+                style: TextStyles.headLine(
+                    color: DardyColors.darkBlue,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              Visibility(
+                visible: hasBadge == true ? true : false,
+                child: Container(
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(left: 10),
+                    decoration:
+                        BoxDecoration(color: color, shape: BoxShape.circle),
+                    child: Center(
+                      child: Text(
+                        badge.toString(),
+                        style: TextStyles.title(
+                          color: DardyColors.white,
+                        ),
+                      ),
+                    )),
+              )
+            ],
           ),
-          Icon(FontAwesomeIcons.angleRight,color: DardyColors.grey,size: 12,)
+          Row(
+            children: [
+              Text(
+                'See more',
+                style: TextStyles.title(
+                  color: DardyColors.grey,
+                ),
+              ),
+              Icon(
+                FontAwesomeIcons.angleRight,
+                color: DardyColors.grey,
+                size: 12,
+              )
+            ],
+          )
         ],
-      )
-
-      ],
+      ),
     );
   }
 }

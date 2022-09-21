@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 //fontSize
 const double kfsLarger = 30.0;
@@ -10,33 +11,36 @@ const double kfsBody = 14.0;
 const double kfsCaption = 12.0;
 
 class TextStyles {
-  static body2({Color? color}) => TextStyle(
+  static body2({Color? color}) => GoogleFonts.montserrat(
       fontSize: kfsBody, letterSpacing: 0.5, color: color ?? Colors.black);
 
-  static title({Color? color, double? fontsize}) => TextStyle(
-      fontSize: fontsize ,
-      fontWeight: FontWeight.w700,
+  static title({Color? color, double? fontsize}) => GoogleFonts.montserrat(
+      fontSize: fontsize,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0.5,
       color: color ?? Colors.black);
 
-  static subTitle({Color? color}) =>
-      TextStyle(fontSize: kfsSubtitle, color: color ?? Colors.black);
+  static subTitle({Color? color, double? fontSize}) => GoogleFonts.montserrat(
+        fontSize: fontSize ?? kfsSubtitle,
+        color: color ?? Colors.black,
+      );
 
-  static caption({Color? color}) =>
-      TextStyle(fontSize: kfsCaption, color: color ?? Colors.black);
+  static caption({Color? color}) => GoogleFonts.montserrat(
+      fontSize: kfsCaption, color: color ?? Colors.black);
 
-  static headLine({Color? color, double? fontSize, FontWeight? fontWeight}) => TextStyle(
-      fontSize: fontSize ?? kfsHeadline,
-      fontWeight: fontWeight ?? FontWeight.w700,
-      letterSpacing: 0.5,
-      color: color ?? Colors.black);
+  static headLine({Color? color, double? fontSize, FontWeight? fontWeight}) =>
+      GoogleFonts.montserrat(
+          fontSize: fontSize ?? kfsHeadline,
+          fontWeight: fontWeight ?? FontWeight.w600,
+          letterSpacing: 0.5,
+          color: color ?? Colors.black);
 
-  static subHead({Color? color}) => TextStyle(
+  static subHead({Color? color}) => GoogleFonts.montserrat(
       fontSize: kfsSubhead,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0.5,
       color: color ?? Colors.black);
 
-  static buttonTitle({Color? color}) => TextStyle(
+  static buttonTitle({Color? color}) => GoogleFonts.montserrat(
       fontSize: kfsTitle, letterSpacing: 0.5, color: color ?? Colors.black);
 }

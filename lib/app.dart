@@ -18,23 +18,23 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
-
-
   final routerDelegate = BeamerDelegate(
-
-    initialPath: '/bottomNav',
+    initialPath: '/',
     locationBuilder: RoutesLocationBuilder(
       routes: {
-        '/': (context, state, data) => const SplashScreen(),
+        '/': (context, state, data) => const BottomNavigation(),
+        // '/': (context, state, data) => const SplashScreen(),
         '/welcome': (context, state, data) => ZoomIn(child: WelcomeScreen()),
         '/signin': (context, state, data) => FadeIn(child: LoginScreen()),
         '/signup': (context, state, data) => FadeIn(child: SignupScreen()),
-        '/reset%20password': (context, state, data) => FadeIn(child: ResetPasswordScreen()),
-        '/email%20sent': (context, state, data) => FadeIn(child:EmailSentScreen()),
-        '/verify%20code': (context, state, data) => FadeIn(child:VerifyCodeScreen()),
-        '/bottomNav': (context, state, data) => FadeIn(child:BottomNavigation()),
-
+        '/reset%20password': (context, state, data) =>
+            FadeIn(child: ResetPasswordScreen()),
+        '/email%20sent': (context, state, data) =>
+            FadeIn(child: EmailSentScreen()),
+        '/verify%20code': (context, state, data) =>
+            FadeIn(child: VerifyCodeScreen()),
+        '/bottomNav': (context, state, data) =>
+            FadeIn(child: BottomNavigation()),
       },
     ),
   );
