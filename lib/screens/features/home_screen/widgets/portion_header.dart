@@ -52,20 +52,23 @@ class PortionHeader extends StatelessWidget {
               )
             ],
           ),
-          Row(
-            children: [
-              Text(
-                'See more',
-                style: TextStyles.title(
-                  color: DardyColors.grey,
+          GestureDetector(
+            onTap: () => onPressed(),
+            child: Row(
+              children: [
+                Text(
+                  'See more',
+                  style: TextStyles.title(
+                    color: DardyColors.grey,
+                  ),
                 ),
-              ),
-              Icon(
-                FontAwesomeIcons.angleRight,
-                color: DardyColors.grey,
-                size: 12,
-              )
-            ],
+                Icon(
+                  FontAwesomeIcons.angleRight,
+                  color: DardyColors.grey,
+                  size: 12,
+                )
+              ],
+            ),
           )
         ],
       ),

@@ -4,6 +4,8 @@ import 'package:dardy/model/rewards_data.dart';
 import 'package:dardy/other%20components/project_images.dart';
 import 'package:dardy/other%20components/shared_widgets/text_widgets.dart';
 import 'package:dardy/other%20components/style/colors.dart';
+import 'package:dardy/screens/features/home_screen/merchants_screen.dart';
+import 'package:dardy/screens/features/home_screen/rewards_screen.dart';
 import 'package:dardy/screens/features/home_screen/widgets/category_container.dart';
 import 'package:dardy/screens/features/home_screen/widgets/merchant_container.dart';
 import 'package:dardy/screens/features/home_screen/widgets/nearby_container.dart';
@@ -11,6 +13,7 @@ import 'package:dardy/screens/features/home_screen/widgets/portion_header.dart';
 import 'package:dardy/screens/features/home_screen/widgets/rewards_ready_container.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -169,7 +172,8 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         PortionHeader(
           title: 'Rewards Ready',
-          onPressed: () => print('hello'),
+          onPressed: () =>
+              pushNewScreen(context, screen: SeeAllRewardsScreen()),
           badge: 8,
           color: DardyColors.midbrown,
           hasBadge: true,
@@ -203,7 +207,8 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         PortionHeader(
           title: 'Merchants',
-          onPressed: () => print('hello'),
+          onPressed: () =>
+              pushNewScreen(context, screen: SeeAllMerchantsScreen()),
           badge: 8,
           color: DardyColors.green,
           hasBadge: true,
